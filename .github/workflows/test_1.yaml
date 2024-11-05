@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: LS
-        run: ls -all
+        run: ls -al
