@@ -3,30 +3,45 @@ name: Test
 on: [push]
 
 jobs:
-  test-build:
+  local-action:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: checkout code
+        uses: actions/checkout@v3
 
       - name: ls 
-        run: 
-          chmod +x script.sh
-          ./script.sh
+        uses: ./.github/actions/my-action
 
-  other:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout-v2
-        uses: actions/checkout@v4.1.7
-      
-      - name: LS 
-        run: ls -al
 
-      - name: Setup Node.js envorinment
-        uses: actions/setup-node@v4.0.3
 
-      - name: node version
-        run: node --version
+
+
+        
+#  test-build:
+#    runs-on: ubuntu-latest
+
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v2
+
+#      - name: ls 
+#        run: 
+#          chmod +x script.sh
+#          ./script.sh
+
+#  other:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout-v2
+#        uses: actions/checkout@v4.1.7
+#      
+#      - name: LS 
+#        run: ls -al
+
+#      - name: Setup Node.js envorinment
+#        uses: actions/setup-node@v4.0.3
+
+#      - name: node version
+#        run: node --version
       
