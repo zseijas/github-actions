@@ -26,5 +26,7 @@ jobs:
 
       - name: Setup Node.js envorinment
         uses: actions/setup-node@v4.0.3
-      
+
+      - name: node version
+        run: node --version
       
